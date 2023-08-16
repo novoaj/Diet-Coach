@@ -1,0 +1,27 @@
+set up routing and views super basic
+make sure images are hosted by ME (put them in static folder), if not hosted by me could cause issues also j bad practice
+
+
+different pages:
+Home - the user's home page. here they can add meals or items to track their different. initially we will make this a manual process
+    goal is to connect some sort of free nutrition API or make my own DB of items to choose from
+    however, always should have option to create a new item that hasn't been used before
+
+    if user not authenticated, route them to getstarted or login
+
+getStarted - prompts the user to sign up.
+
+Login - login page, authenticate users
+    should also have the option to either "sign up" or get started or something if user doesn't have an account
+
+SignUp - sign up page, create an account with us and register the user in our database
+
+Logout - not really a page, but should log user out and be available as a button only to users that are currently logged in
+    prolly will direct people to getStarted or login
+
+improtant things to keep in mind:
+navbar is the same design in all pages, however, contents will be different depending on if user is logged in or what page they are on.
+ (could probably do this is base.html like from the tutorial)
+
+ different navbar options on each page, should maybe take out of base.html 
+ (keep navbar design but have a block that is replacable for navbar content)

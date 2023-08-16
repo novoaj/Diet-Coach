@@ -1,0 +1,150 @@
+{% extends "base.html"%}
+
+{% block title %}Sign Up{% endblock %}
+{% block scripts %}
+{% endblock %}
+{% block content %}
+<div class = "container">
+    <div class = "row">
+        <div class = "inner-container bg-light col-12" id = "example">
+            <form method = "POST">
+                <div class="form-row col-12">
+                    <h3 class="text-center" >Sign Up</h3>
+                </div>
+                <div class="form-row">
+                    <div class = "form-group col-md-6">
+                        <label for = "email">Email Address</label>
+                        <input 
+                            type = "email" 
+                            class = "form-control" 
+                            id="email" 
+                            name="email" 
+                            placeholder = "Enter email"
+                            required
+                        />
+                    </div>
+                    <div class = "form-group col-md-6">
+                        <label for = "name">First Name</label>
+                        <input 
+                            type = "text" 
+                            class = "form-control" 
+                            id="first-name" 
+                            name="first-name" 
+                            placeholder = "Enter First Name"
+                            required
+                        />
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class = "form-group col-md-6">
+                        <label for = "password1">Password</label>
+                        <input 
+                            type = "password" 
+                            class = "form-control" 
+                            id="password1" 
+                            name="password1" 
+                            placeholder = "Enter password"
+                            required
+                        />
+                    </div>
+                    <div class = "form-group col-md-6">
+                        <label for = "password2">Password (Confirm)</label>
+                        <input
+                            type = "password"
+                            class = "form-control"
+                            id = "password2"
+                            name = "password2"
+                            placeholder = "Confirm password"
+                            required
+                        />
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class = "form-group col-md-6">
+                        <label for = "sex">Sex</label>
+                        <select multiple class = "form-control" id = "sex-select" required>
+                            <option value = "Male">Male</option>
+                            <option value = "Female">Female</option>
+                        </select>
+                    </div>
+                    <div class="form-inline col-md-6">
+                        <div class = "form-group col-lg-12">
+                            <label for = "height">Height(ft, in)</label><br/>
+                            <select class="form-control w-15" id="height-ft" name = "height-ft" required>
+                                <option value = "1">1</option>
+                                <option value = "2">2</option>
+                                <option value = "3">3</option>
+                                <option value = "4">4</option>
+                                <option value = "5">5</option>
+                                <option value = "6">6</option>
+                                <option value = "7">7</option>
+                            </select>
+                            <select class="form-control w-15" id="height-in" name = "height-in" required>
+                                <option value = "0">0</option>
+                                <option value = "1">1</option>
+                                <option value = "2">2</option>
+                                <option value = "3">3</option>
+                                <option value = "4">4</option>
+                                <option value = "5">5</option>
+                                <option value = "6">6</option>
+                                <option value = "7">7</option>
+                                <option value = "8">8</option>
+                                <option value = "9">9</option>
+                                <option value = "10">10</option>
+                                <option value = "11">11</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>                
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="age">Age (yrs)</label>
+                        <input 
+                            class = "form-control" 
+                            type="text" 
+                            placeholder="Age (yrs)" 
+                            id = "age" 
+                            name = "age" 
+                            required
+                        />
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="weight">Weight</label>
+                        <input 
+                            class = "form-control" 
+                            type="text" 
+                            placeholder="Weight (lbs)" 
+                            id = "weight" 
+                            name = "weight" 
+                            required
+                        />
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="goals">Goals</label>
+                        <select class = "form-control" name = "goal" id = "goal">
+                            <option value = "maintain">Maintain weight</option>
+                            <option value = "lose">Lose weight</option>
+                            <option value = "gain">Gain muscle</option>
+                        </select>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="activity-factor">How active are you?</label>
+                        <select class = "form-control" name = "activity-factor" id = "activity-factor">
+                            <option value = "1.2">Sedentary</option>
+                            <option value = "1.375">Lightly active</option>
+                            <option value = "1.55">Moderately active</option>
+                            <option value = "1.725">Very active</option>
+                            <option value = "1.9">Super active</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <button type = "submit" class = "btn btn-primary">Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}
