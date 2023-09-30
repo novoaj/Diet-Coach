@@ -22,38 +22,43 @@
 </head>
 <body>
     <nav class = "navbar navbar-expand-lg navbar-light bg-primary rounded-bottom" id = "navbar">
-      <div class = "navbar nav">
-        <a class="navbar-brand" href = "#">
-          <img src = "https://upload.wikimedia.org/wikipedia/en/6/63/MyFitnessPal_Logo.png" width = "30" height = "30" alt = "">
-        </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <div class = "collapse navbar-collapse" id="navbarSupportedContent" >
-          <ul class = "navbar-nav mr-auto">
-            {% if user.is_authenticated %}
-            <li class = "nav-item">
-              <a class = "nav-link text-light" id = "home" href = "/">Home</a>
-            </li>
-            <li class = "nav-item">
-              <a class = "nav-link text-light" id = "logout" href = "/logout">Logout</a> 
-            </li>
-            {% else %}
-            <li class = "nav-item">
-              <a class = "nav-item nav-link text-light" id = "login" href = "/login">Login</a> 
-            </li>
-            <li class = "nav-item">
-              <a class = "nav-item nav-link text-light" id = "signUp" href = "/sign-up">Sign Up</a> 
-            </li>
-            <li class = "nav-item">
-              <button class = "btn btn-light bg-light rounded ml-auto text-primary" type = "button">Start Today</button>
-            </li>
-            {% endif %}
-          </ul>
-        </div>   
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbar-content" aria-controls="navbar-content" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <a class="navbar-brand" href = "#">
+        <img src = "https://upload.wikimedia.org/wikipedia/en/6/63/MyFitnessPal_Logo.png" width = "30" height = "30" alt = "">
+      </a>
+      <div class="collapse navbar-collapse justify-content-between" id = "navbar-content">
+        <ul class = "navbar-nav">
+          {% if user.is_authenticated %}
+          <li class = "nav-item">
+            <a class = "nav-link text-light" id = "home" href = "/">
+              <i class="fa-solid fa-house"></i>
+            </a>
+          </li>
+          {% endif %}
+        </ul>
+        <ul class = "navbar-nav">
+          {% if user.is_authenticated %}
+          <li class = "nav-item">
+            <a class = "nav-link text-light" id = "logout" href = "/logout">Logout</a> 
+          </li>
+          <li class = "nav-item">
+            <a class = "nav-link text-light" id = "profile" href = "/profile">
+              <i class="fa-solid fa-user"></i>
+            </a>
+          </li>
+          {% else %}
+          <li class = "nav-item">
+            <a class = "nav-item nav-link text-light" id = "login" href = "/login">Login</a> 
+          </li>
+          <li class = "nav-item">
+            <a class = "nav-item nav-link text-light" id = "signUp" href = "/sign-up">Sign Up</a> 
+          </li>
+          {% endif %}
+        </ul>
       </div>
-        
+      
     </nav>
 
     {% with messages = get_flashed_messages(with_categories=true) %}
@@ -99,5 +104,8 @@
         type = "text/javascript"
         src = "{{ url_for('static',filename='index.js')}}"
       ></script>
+      <script 
+        src="https://kit.fontawesome.com/8be503695d.js" crossorigin="anonymous"
+        ></script>
 </body>
 </html>

@@ -34,7 +34,7 @@ def home():
         carbs = request.form.get("carbs")
 
         """
-        validates that txt is a number (float)
+        validates that txt is a number
         """
         def validate(txt):
             return txt.strip().isnumeric()
@@ -55,14 +55,24 @@ def home():
     totals = calculate_totals(current_user)
     return render_template("home.html", user = current_user, user_dict = totals)
 
+"""
+not yet implemented with this app
+"""
 @views.route("/get-started")
 def get_started():
     return render_template("get_started.html", user=current_user)
 
+"""
+tranfers python dictionary with user data to frontend for javascript to handle
+"""
 @views.route("/getpythondata")
 def get_python_data():
     return json.dumps(totals)
 
+"""
+receives post request from delete JS function with the id of the item to delete. 
+finds the item and deletes it from database
+"""
 @views.route("/delete-item", methods = ["POST"])
 def delete_item():
     item = json.loads(request.data) # item is a python dict
@@ -74,3 +84,7 @@ def delete_item():
             db.session.commit()
     
     return jsonify({})
+
+@views.route("/profile", methods = ["POST", "GET"])
+def profile():
+    return render_template("profile.html", user=current_user)

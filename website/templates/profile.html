@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container">
+    <div class="row" id = "profile-item">
+        <div class="col-12">
+            <p>{{ user.first_name }}'s profile page</p>
+            
+        </div>
+        <div class="col-2" id = "profile-item">
+            <p>{{ user.weight }} lbs</p>
+            
+        </div>
+        <div class="col-10" id = "weight-btn">
+            <div class="btn btn-light">update</div>
+        </div>
+    </div>
+
+</div>
+
+{% endblock %}

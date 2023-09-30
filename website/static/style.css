@@ -2,7 +2,7 @@ img {
     background: transparent;
 }
 body{
-    font-family: system-ui;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 .outer-container {
@@ -18,8 +18,9 @@ body{
     overflow-y: scroll;
     /* overflow: auto; */
 }
-.container {
-    margin-top: 50px;
+#navbar{
+    padding-left: 15%;
+    padding-right: 15%;
 }
 .row{
     padding-top: 10px;
@@ -38,4 +39,13 @@ body{
 
 #navbar{
     box-shadow: 0px 5px 5px 0px rgba(209,209,209,1);
+}
+#weight-btn{
+    display:inline-flex;
+    align-content: flex-start;
+}
+#profile-item{
+    display: flex;
+    justify-content: center;
+    align-self: center;
 }
