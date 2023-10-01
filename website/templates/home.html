@@ -33,6 +33,7 @@
     }
     window.onload = function() { // runs when the home page loads
         if (window.location.pathname === "/") {
+            updateItems(getCurrentDateAndTime());
             getPython(); // retrieves python data and updates progress bar
             updateDate(); // updates the date
         }
